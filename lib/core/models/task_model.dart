@@ -28,4 +28,20 @@ class TaskModel extends HiveObject {
     required this.createdAt,
     required this.tagIds,
   });
+
+  TaskModel copyWith({
+    String? id,
+    String? title,
+    bool? isCompleted,
+    DateTime? createdAt,
+    List<String>? tagIds,
+  }) {
+    return TaskModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      isCompleted: isCompleted ?? this.isCompleted,
+      createdAt: createdAt ?? this.createdAt,
+      tagIds: tagIds ?? this.tagIds,
+    );
+  }
 }
